@@ -1,0 +1,55 @@
+.left-menu {
+	width: 200px;
+	height: 100%;
+	background-color: #202121;
+
+	position: absolute;
+	float: left;
+	top: 0;
+	left: 0;
+	.menu {
+		margin-left:5px;
+		margin-right:5px;
+		.menu-header {
+			text-align: center;
+			.menu-logo {
+		    background: #3BC391;
+		    padding: 7px 14px;
+		    font-size: 1.3em;
+			}
+			.menu-company {
+				color: #FFFEFE;
+		  	font-size: 16px;
+		  	font-weight: 700;
+		  	text-transform: uppercase;
+				line-height: 36px;
+				padding-bottom: 10px;
+				border-bottom: 2px solid #3BC391;
+			}
+		}
+		#menu {
+			margin-top: 20px;
+			margin-left: 10px;
+			li {
+				list-style-type: none;
+				cursor: pointer;
+				font-size: 15px;
+				color: #D4D4D4;
+				padding:5px;
+				display: block;
+				width: 150px;
+				span:first-child {
+					margin-right: 10px;
+				}
+			}
+			li:hover {
+				color: #3BC391;
+				transition: color .5s ease;
+			}
+		}
+	}
+}
+.right-menu {
+	float: right;
+	width: calc(~'100% - 200px');
+}

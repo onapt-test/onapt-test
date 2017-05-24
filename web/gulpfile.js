@@ -104,7 +104,9 @@ gulp.task('clean', function () {
 
 gulp.task('assets', function() {
   gulp.src('src/assets/**/*')
-    .pipe(gulp.dest('dist/assets/'))
+    .pipe(gulp.dest('dist/assets/'));
+  gulp.src('src/fonts/**/*')
+    .pipe(gulp.dest('dist/fonts/'));
 });
 
 gulp.task('minify-js',['angular-template'], function(cb) {

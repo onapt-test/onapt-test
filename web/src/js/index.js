@@ -5,7 +5,7 @@ angular.module("app", ['ui.router', 'ngTouch'])
 	.config(['$locationProvider', '$stateProvider', '$urlRouterProvider','$httpProvider',
 	  ($locationProvider, $stateProvider, $urlRouterProvider, $httpProvider) =>{
 
-      delete $httpProvider.defaults.headers.common['X-Requested-With'];
+      
 	    $locationProvider.html5Mode(true)
 	    $urlRouterProvider.when('','/')
 	    $urlRouterProvider.otherwise("/404/");
@@ -19,5 +19,19 @@ angular.module("app", ['ui.router', 'ngTouch'])
 	        templateUrl: "/html/index.html",
 	        controller: "mainController"
         })
+	      .state('cabinet', {
+	        url:'/cabinet/',
+	        templateUrl: "/html/cabinet.html",
+	        controller: "cabinetController"
+        })
+	       .state('cabinet.degust', {
+	        url:'degust/',
+	        templateUrl: "/html/degust.html"
+        })
+	        .state('cabinet.desctipt', {
+	        url:'desctipt/',
+	        templateUrl: "/html/desctipt.html"
+        })
+
 	  }
 	])
