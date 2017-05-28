@@ -10,16 +10,16 @@
 				<span class="glyphicon glyphicon-home"></span>
 				<span>На главную</span>
 			</li>
-			<li class="hvr-underline-from-center" ui-sref="^.degust">
+			<li class="hvr-underline-from-center" ui-sref="cabinet.degust">
 				<span class="glyphicon glyphicon-glass"></span>
-				<span>Дегустации</span>
+				<span>Панель</span>
 			</li>
-			<li class="hvr-underline-from-center" ui-sref=".desctipt">
+			<li class="hvr-underline-from-center" ui-sref="cabinet.desctipt">
 				<span class="glyphicon glyphicon-file"></span>
 				<span>Дескрипторы</span>
 			</li>
 			<li></li>
-			<li class="hvr-underline-from-center">
+			<li class="hvr-underline-from-center" ui-sref="main">
 				<span class="glyphicon glyphicon-remove"></span>
 				<span>Выйти</span>
 			</li>
@@ -27,9 +27,19 @@
 	</div>
 </div>
 <div class="right-menu">
-1) мои дескрипторы 2) стандартные дескрипторы
-В моих:
-кнопку добавить, удалить, сохранить.
-Возможно иметь несколько заготовок.
+	<div class="calc-wrapper">
+		<div class="descript-wrapper">
+			<div class="header">
+				<ul>
+					<li>
+						<button class="btn btn-success">Мои дескрипторы</button>
+					</li>
+					<li>
+						<button class="btn btn-primary" ui-sref="^.standart">Стандартные дескрипторы</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
 </div>

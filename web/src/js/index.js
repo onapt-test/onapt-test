@@ -30,8 +30,15 @@ angular.module("app", ['ui.router', 'ngTouch'])
         })
 	        .state('cabinet.desctipt', {
 	        url:'desctipt/',
-	        templateUrl: "/html/desctipt.html"
+	        templateUrl: "/html/descript.html"
         })
-
+	        .state('cabinet.desctipt.my', {
+	        url:'desctipt/my',
+	        templateUrl: "/html/descript-my.html"
+        })
+	        .state('cabinet.desctipt.standart', {
+	        url:'desctipt/standart',
+	        templateUrl: "/html/descript-standart.html"
+        })
 	  }
 	])
