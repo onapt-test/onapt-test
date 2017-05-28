@@ -137,14 +137,14 @@
 					<table>
 						<tr>
 							<td>Логин</td>
-							<td><input type="text" placeholder="Введите логин"></td>
+							<td><input type="text" placeholder="Введите логин" ng-model="user.login"></td>
 						</tr>
 						<tr>
 							<td>Пароль</td>
-							<td><input type="text" placeholder="Введите пароль"></td>
+							<td><input type="text" placeholder="Введите пароль" ng-model="user.pass"></td>
 						</tr>
 					</table>
-					<button class="col-md-5 btn btn-success">Регистрация</button>
+					<button class="col-md-5 btn btn-success" ng-click="register()">Регистрация</button>
 					<button class="col-md-5 btn btn-success" ui-sref="cabinet" ng-click="goCabinet()">Войти</button>
 				</div>
 			</div>
