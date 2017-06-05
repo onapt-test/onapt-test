@@ -14,11 +14,28 @@ angular.module("app")
                 $state.go("cabinet")
               }
               else
-              	console.log("bad req");
+              	console.log("bad req")
             })
             
           })
     }
+
+    $scope.login = ()=> {
+      $server.login({user: "orion", pass: "lol"}, (err,data)=>{
+        $scope.$apply(()=>{
+          if(!err) {
+            $state.go("cabinet")
+          }
+          else
+            console.log("bad req")
+        })
+        
+      })
+    }
+
+
+
+
      $scope.phones = [{
         name: 'Nokia Lumia 630',
         year: 2014,

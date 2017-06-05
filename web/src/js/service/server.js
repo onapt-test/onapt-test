@@ -4,15 +4,18 @@ angular.module("app")
     var methods = [
       'register',
       'login',
+      'getStandartDescription',
+      'editDescription',
     ]
     var addMethod = (methodName)=>{
       api[methodName] = (data, callback)=>{
-        var domain = "localhost"
-        $rootScope.api = domain = "vk.com"
+        var domain = "localhost:8000"
+        // $rootScope.api = domain = "vk.com"
         
         // data.cookies = {
         //   sessionId: localStorage.token
         // }
+        data.token = localStorage.token
         var request = $.ajax({
           url: 'http://'+domain+'/call/'+methodName,
           method: 'POST',
