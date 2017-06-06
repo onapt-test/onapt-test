@@ -1,0 +1,34 @@
+<div class="wrapper"> 
+	<div class="select-graf">
+				<label class="graf-label">
+				    <input type="radio" ng-model="grafik.g" value="1" />
+				    <span id="green">Radar Chart</span>
+				</label>
+				<label class="graf-label">
+				    <input type="radio" ng-model="grafik.g" value="2" />
+				    <span>Bar Chart</span>
+				</label> 
+				<label class="graf-label">
+				    <input type="radio" ng-model="grafik.g" value="3" />
+				    <span>Polar Area Chart</span>
+				</label> 
+	</div>
+	<div class="graf-sad">
+			<div class="graf-radar"  ng-show="grafik.g==1">
+				<canvas id="radar" class="chart chart-radar"
+					chart-data="dataRadar" chart-options="options" chart-labels="labelsRadar" height="200">
+				</canvas> 
+			</div>
+			<div class="graf-bar" ng-show="grafik.g==2">
+				<canvas id="bar" class="chart chart-bar"
+					chart-data="dataChart" chart-labels="labelsChart" chart-series="series">
+				</canvas>
+			</div>
+			<div class="graf-area" ng-show="grafik.g==3">
+				<canvas id="polar-area" class="chart chart-polar-area"
+  					chart-data="dataArea" chart-labels="labelsArea" chart-options="optionsArea" chart-colors="colorsArea"  height="200">
+				</canvas>
+			</div>
+	</div>
+	<div style="clear: both;"></div>
+ </div>

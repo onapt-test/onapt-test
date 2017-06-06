@@ -1,26 +1,29 @@
 <div ui-view>
 <div class="right-menu">
-	<div class="calc-wrapper">
-		<div class="descript-wrapper">
-			<div class="header">
-				<ul>
-					<li>
-						<button class="btn btn-primary" ui-sref="^.my">Мои дескрипторы</button>
-					</li>
-					<li>
-						<button class="btn btn-success">Стандартные дескрипторы</button>
-				</ul>
-			</div>
-		</div>
-		<div class="standart-content">
-		<ul>
-			<li ng-repeat="phone in phones">
-				<b>{{phone.name}}</b>
-				<p>Цена: {{phone.price}} $</p>
-				<p>Производитель: {{phone.company.name}}</p>
-			</li>
-		</ul>
-		</div>
-	</div>
+  <div class="calc-wrapper">
+    <div class="descript-wrapper">
+      <div class="header">
+        <ul>
+          <li>
+            <button class="btn btn-primary" ui-sref="^.my">Мои дескрипторы</button>
+          </li>
+          <li>
+            <button class="btn btn-success">Стандартные дескрипторы</button>
+        </ul>
+      </div>
+    </div>
+    <div class="standart-content">
+    <table >
+    <tr>
+      <td ng-bind="descriptions.product"></td>
+      <td></td>
+    </tr>
+    <tr ng-repeat="(key,val) in descriptions.descript">
+      <td></td>
+      <td ng-bind="val"></td>
+    </tr>
+    </table>
+    </div>
+  </div>
 </div>
 </div>

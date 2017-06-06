@@ -12,6 +12,11 @@
 					</li>
 				</ul>
 			</div>
+			<button ng-click="editDescription()">edit descript</button>
+
+			<ul ng-repeat="val in obj">
+				<li ng-repeat="val in val.val">{{val}}</li>
+			</ul>
 		</div>
 	</div>
 </div>

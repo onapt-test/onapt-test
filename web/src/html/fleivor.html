@@ -1,0 +1,585 @@
+<br><br>
+<div class="wrapper" >
+					<!-- 	NEW TABLE -->
+			<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+				<tr>
+					<th style="text-align:left">Фамилия и имя дегустатора :{{panel.people}}</th>
+				</tr>
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center"><tr><th style="text-align:left">Название вина: {{panel.name}}</th></tr></table>
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center"><tr><th style="text-align:left">Год урожая: {{panel.god}}</th></tr></table>
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center"><tr><th style="text-align:left">Производитель: {{panel.proizvod}}</th></tr></table>
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							<th width="6%">1</th>
+							<th width="28%"> Флейвор(дескрипторы)</th>
+							<th width="550px">Шкала оценки интенсивности <br> Слабая интенсивность -> Сильная интенсивность</th>
+						</tr>
+					</table>
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.1</td>
+							 <td width="28%">Вишня</td>
+							 <td width="550px">
+									<label class="custom-label">
+										<input ng-model="val.vish" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vish" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vish" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vish" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vish" type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.vish" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.vish" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+					<!-- 				<div ng-repeat="i in nTimes(count)"> 
+						  <div class="flex-container">
+						    <label class="custom-label"> 
+						    <input ng-model=valt.izum type="radio" ng-value="i+1" name="mark"/> 
+						    <span class="flex-iteme">{{i+1}}</span> 
+						    </label> 
+						    </div>
+						 </div> -->
+						<!--  <p>Оценка: {{valt.izum}}</p> -->
+							 </td>
+						</tr>
+			</table>
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.2</td>
+							 <td width="28%">Гранат</td>
+							 <td width="550px">
+								<div >
+									<label class="custom-label">
+										<input ng-model="val.gran" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.gran" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.gran" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.gran" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.gran" type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.gran" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.gran" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			</table>	
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.3</td>
+							 <td width="28%">Смородина</td>
+							 <td width="550px">
+								<div >
+									<label class="custom-label">
+										<input ng-model="val.smor" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.smor" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.smor" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.smor" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.smor" type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.smor" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.smor" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			</table>
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.4</td>
+							 <td width="28%">Ежевика</td>
+							 <td width="550px">
+								<div >
+									<label class="custom-label">
+										<input ng-model="val.ej" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.ej" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.ej" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.ej" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.ej" type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.ej" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.ej" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			</table>
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.5</td>
+							 <td width="28%">Слива</td>
+							 <td width="550px">
+								<div >
+									<label class="custom-label">
+										<input  ng-model="val.sliv" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.sliv" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.sliv" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.sliv" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.sliv" type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.sliv" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.sliv" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			</table>
+						<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.6</td>
+							 <td width="28%">Конфитюр</td>
+							 <td width="550px">
+								<div >
+									<label class="custom-label">
+										<input ng-model="val.konf" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.konf" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input name="test6 " ng-model="val.konf" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.konf" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.konf" type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.konf" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.konf" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			</table>
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.7</td>
+							 <td width="28%">Сафьян</td>
+							 <td width="550px">
+								<div >
+									<label class="custom-label">
+										<input ng-model="val.saf" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.saf" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.saf" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.saf" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.saf" type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.saf" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.saf" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			</table>
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.8</td>
+							 <td width="28%">Черный шоколад</td>
+							 <td width="550px">
+								<div >
+									<label class="custom-label">
+										<input ng-model="val.black" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.black" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.black" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.black" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.black" type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.black" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.black" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			</table>
+					<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.9</td>
+							 <td width="28%">Изюм</td>
+							 <td width="550px">
+								<div >
+									<label class="custom-label">
+										<input ng-model=val.izum type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model=val.izum type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model=val.izum type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model=val.izum type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model=val.izum type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model=val.izum type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model=val.izum type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			</table>
+				<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.10</td>
+							 <td width="28%">Сливки</td>
+							 <td width="550px">
+								<div >
+									<label class="custom-label">
+										<input ng-model="val.slivki" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.slivki" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.slivki" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.slivki" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.slivki" type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.slivki" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.slivki" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			 	</table>
+			 			<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.11</td>
+							 <td width="28%">Корица</td>
+							 <td width="550px">
+								<div >
+									<label class="custom-label">
+										<input ng-model="val.kor" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.kor" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.kor" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.kor" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.kor"  type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.kor" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.kor" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			 	</table>
+			 			<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center">1.12</td>
+							 <td width="28%">Стручковая ваниль</td>
+							 <td width="550px">
+								<div >
+									<label class="custom-label">
+										<input ng-model="val.vanil" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vanil" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vanil" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vanil" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vanil" type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vanil" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vanil" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			 	</table>
+			 	<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center"><b>2</b></td>
+							 <td width="28%" class="vkys" ><b >Вкус</b></td>
+							 <td width="550px"><center><b>Шкала оценки интенсивности</b></center> <br>
+								<div >
+									<label class="custom-label">
+										<input  ng-model="val.vkus" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input name="test121" ng-model="val.vkus" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.vkus" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.vkus" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.vkus" type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.vkus" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input  ng-model="val.vkus" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			 	</table>
+			 	<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center"><b>3</b></td>
+							 <td width="28%" class="vkys"><b>Послевкусие</b></td>
+							 <td width="550px"><center><b>Шкала оценки интенсивности</b></center> <br>
+								<div >
+									<label class="custom-label">
+										<input ng-model="val.poslevkus" type="radio"  value="1" />
+										<span class="flex-iteme">1</span>
+									</label> 
+									<label class="custom-label">
+										<input name="test131" ng-model="val.poslevkus" type="radio"  value="2" />
+										<span class="flex-iteme">2</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.poslevkus" type="radio"  value="3" />
+										<span class="flex-iteme">3</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.poslevkus" type="radio"  value="4" />
+										<span class="flex-iteme">4</span>
+									</label> 
+									<label class="custom-label">
+										<input type="radio"  value="5" />
+										<span class="flex-iteme">5</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.poslevkus" type="radio"  value="6" />
+										<span class="flex-iteme">6</span>
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.poslevkus" type="radio"  value="7" />
+										<span class="flex-iteme">7</span>
+									</label> 
+								</div>
+							 </td>
+						</tr>
+			 	</table>
+			 	<table width="800px" border="1" cellspacing="0" cellpadding="5" align="center">
+						<tr>
+							 <td width="6%" style="text-align: center"><b>4</b></td>
+							 <td width="28%"><b>Общее впечатление</b></td>
+							 <td width="550px"> <br>
+								<div ><center class="ob-vpechat"> 
+									<label class="custom-label">
+										<input ng-model="val.vpech" type="radio"  value="1" /> 
+										<span class="flex-iteme">1</span> - хорошее
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vpech" type="radio"  value="2" />
+										<span class="flex-iteme ">2 </span> - среднее
+									</label> 
+									<label class="custom-label">
+										<input ng-model="val.vpech" type="radio"  value="3" />
+										<span class="flex-iteme">3 </span> - плохое
+									</label> </center>
+								</div>
+							 </td>
+						</tr>
+			 	</table>
+			 			 				 				 	
+</table>
+<br>
+<button ui-sref="^.grafik" ng-click="drawGrafik()" class="buttongr">Подтверждение</button>	
+</table>
+<br><br>
+</div>

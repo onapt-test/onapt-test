@@ -1,4 +1,156 @@
-<div>
-Видеть действующие сессии, возможность создать свою.
-в своей(как в вине, методы, продукты)
-</div>
+<div class="wrapper" ui-view>
+
+	<div class="panel-off">
+		<div class="OFFpanel" ng-show="show==1">
+
+			<div class="panel-header">
+				<span class="panel-status">Статус: неактивно</span>
+			</div>
+			
+			<div class="panel-content">
+			<!-- SECTION ------------------------------------------>
+				<section>
+					<div class="section1">
+						<img src="{{set?'/assets/images/minus.png':'/assets/images/plus.png'}}" ng-click="set=!set">
+						<div><b>Участник</b>:{{panel.number}} ФИО: {{panel.people}}</div>
+					</div>
+
+					<div class="panel-show" ng-show="set">
+					<!-- 	Номер дегустации
+						<input type="number" ng-model="panel.number" > -->
+						Фамилия и Имя
+						<input type="text" ng-model="panel.people" >
+					</div>
+				</section>
+<!-- SECTION ------------------------------------------>
+				<section>
+					<div class="section1">
+						<img src="{{product?'/assets/images/minus.png':'/assets/images/plus.png'}}" ng-click="product=!product">
+						<div><b>Продукт</b>:{{translate(panel.product)}} </div>
+						
+					</div>
+
+					<div class="product-show" ng-show="product">
+						<label class="my-custom-label">
+							<input type="radio" ng-model="panel.product" value="wine"/>
+							<span class="flex-item">Вино</span>
+						</label> 
+						<label class="my-custom-label">
+							<input  type="radio" ng-model="panel.product" value="meat"/>
+							<span class="flex-item">Мясо</span>
+						</label> 
+						<label class="my-custom-label">
+							<input type="radio" ng-model="panel.product" value="milk"/>
+							<span class="flex-item">Молоко</span>
+						</label> 
+						<label class="my-custom-label">
+							<input type="radio" ng-model="panel.product" value="beer"/>
+							<span class="flex-item">Пиво</span>
+						</label> 
+						<label class="my-custom-label">
+							<input type="radio" ng-model="panel.product" value="Champagne"/>
+							<span class="flex-item">Шампанское</span>
+						</label> 
+					</div>
+				</section>
+<!-- SECTION ------------------------------------------>
+				<section>
+					<div class="section1">
+						<img src="{{cart?'/assets/images/minus.png':'/assets/images/plus.png'}}" ng-click="cart=!cart">
+						<div><b>Карта продукта</b>: {{panel.proizvod}} {{panel.sortv}} {{panel.god}} </div>
+					</div>
+					
+					<div class="cart-show" ng-show="cart">
+						<div class="karta">
+							<div class="karta-1">
+								<!-- <span>Производитель:</span><br>
+								<span>Год:</span><br>
+								<span>Название:</span><br>
+								<span>Сорт:</span><br> -->
+								<ul>
+									<li>Производитель</li>
+									<li>Год</li>
+									<li>Название</li>
+									<li>Сорт</li>
+								</ul>
+							</div>
+							<div class="karta-2">
+								<input type="text" ng-model="panel.proizvod"><br>				
+								<input type="number" ng-model="panel.god"><br>				
+								<input type="text" ng-model="panel.name"><br>
+								<input type="text" ng-model="panel.sortv"><br>
+							</div>
+							<div class="karta-3">Название: <br>  {{panel.name}} </div>
+						<div style="clear: both;"></div>
+						</div>
+					</div>
+				</section>
+<!-- SECTION ------------------------------------------>
+				<section>
+					<div class="section1">
+						<img src="{{metod?'/assets/images/minus.png':'/assets/images/plus.png'}}" ng-click="metod=!metod">
+						<div><b>Метод</b>: {{panel.metod}} Макс. оценка: {{panel.eval}} </div>
+
+					</div>
+
+				<!-- 		<br>
+						<input type="number" ng-model="count">
+						  <div ng-repeat="i in nTimes(count)"> 
+						  <div class="flex-container">
+						    <label class="custom-label"> 
+						    <input ng-model=valt.izum type="radio" ng-value="i+1" name="mark"/> 
+						    <span class="flex-iteme">{{i+1}}</span> 
+						    </label> 
+						    </div>
+						 </div>
+						  <p>Оценка: {{valt.izum}}</p> -->
+
+
+
+
+					
+					<div class="metod-show" ng-show="metod">
+						<div class="flex-container">
+							<label class="my-custom-label">
+							    <input type="radio" ng-model="panel.metod" value="Флейвора" />
+							    <span>Метод Флейвора</span>
+							</label> 
+							<label class="my-custom-label">
+							    <input  type="radio" ng-model="panel.metod" value="парного сравнивния" />
+							    <span>"парного сравнивния"</span>
+							</label>
+							<label class="my-custom-label" >
+							    <input  type="radio" ng-model="panel.metod" value="триангуляции" />
+							    <span>Метод триангуляции</span>
+							</label>
+							<label class="my-custom-label" >
+							    <input  type="radio" ng-model="panel.metod" value="'Дуо-Трио'" />
+							    <span>Метод "Дуо-Трио"</span>
+							</label>
+							<label class="my-custom-label" >
+							    <input  type="radio" ng-model="panel.metod" value="'два из пяти'"/>
+							    <span>Метод "два из пяти"</span>
+							</label>
+							<label class="my-custom-label" >
+							    <input  type="radio" ng-model="panel.metod" value="'а не а'" />
+							    <span>Метод "а не а"</span>
+							</label>
+						</div>
+
+						<div class="max-point">
+							Максимальная оценка:
+							<input type="number" min="1" value="7" ng-model="panel.eval">
+						</div>
+
+
+					</div>
+				</section>
+				<div class="tofleivor">
+					<button  ui-sref=".fleivor" class="button tofleivorBT" ng-click="nTimes()">Анализ</button>
+					<div style="clear: both;"></div>
+				</div>
+
+		</div>
+
+	</div>
+<br>

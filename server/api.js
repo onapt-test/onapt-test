@@ -1,8 +1,9 @@
 module.exports = (db)=>{
   return (method,data,callback)=>{
-    var postersCollection = db.collection('posters');
-    var descriptCollection = db.collection('descriptions');
     var usersCollection = db.collection('users');
+    var standartDescriptCollection = db.collection('standartDescriptions');
+    var userDescriptCollection = db.collection('userDescriptions');
+    var testCollection = db.collection('test');
     generateToken = ()=>{
       var str=""
       var alp="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789"
@@ -68,6 +69,39 @@ module.exports = (db)=>{
             }
           })
         }
+      },
+      getStandartDescription: (data, callback)=> {
+        standartDescriptCollection.findOne({}, (err,data2)=>{
+          if(data2) {
+            callback(null,{data: data2})
+          }
+        })
+      },
+      getMyDescription: (data,callback)=> {
+        console.log(data);
+        if(data) {
+          usersCollection.findOne({
+            token: data.clientToken
+          }, (err,data2)=>{
+            console.log(err,data2)
+            if(data2) {
+              userDescriptCollection.findOne({
+                userId: data2.userId
+              }, (err,data3)=> {
+                if(data3) {
+                  callback(null, data3)
+                } else {
+                  callback({message: "нет своего набора"}, null)
+                }
+              })
+            }
+          })
+        }
+      },
+      editDescription: (data,callback)=> {
+        testCollection.update({test1: "test1"},{$set:{val4: 4}}, (err,data)=>{
+          console.log(data)
+        })
       }
 
 

@@ -5,6 +5,7 @@ angular.module("app")
       'register',
       'login',
       'getStandartDescription',
+      'getMyDescription',
       'editDescription',
     ]
     var addMethod = (methodName)=>{
