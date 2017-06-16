@@ -1,5 +1,5 @@
 angular.module("app")
-  .controller("cabinetController", ($scope, $rootScope, $state, $translate, $server)=>{
+  .controller("cabinetCtrl", ($scope, $rootScope, $state, $translate, $server)=>{
     $rootScope.lang = "ru"
     $rootScope.translate = $scope.translate = $translate
     $scope.setLang = (lang)=>{
@@ -94,54 +94,7 @@ angular.module("app")
     // }
 
 
-  })
-
-  .controller("desctiptStandartController", ($scope, $rootScope, $state, $translate, $server)=>{
-    $scope.getStandartDescription =()=> {
-      $server.getStandartDescription({},(err,data)=> {
-        $scope.$apply(()=>{ 
-          if(!err){
-            $scope.descriptions = data.data
-            console.log($scope.descriptions);
-          }
-        })
-      })
-    }
-    $scope.getStandartDescription();
-  })
-
-  .controller("desctiptMyController", ($scope, $rootScope, $state, $translate, $server)=>{
-    $scope.getMyDescription=()=> {
-      $server.getMyDescription({clientToken: localStorage.clientToken}, (err,data)=> {
-        $scope.$apply(()=>{
-          if(!err){
-            console.log(data);
-          }
-        })
-      })
-    }
-    $scope.getMyDescription();
-
-    $scope.obj ={ 
-      userId: 3039,
-      set1: {
-        product: "вино",
-        descript:["Вишня", "Гранат", "Смородина", "Ежевика"]
-      },
-      set2: {
-        product: "пиво",
-        descript:["хмель", "гранат", "солод", "пшеница"]
-      }
-    };
-    $scope.editDescription=()=> {
-      // $server.editDescription ({str1: ""}, (err, data)=> {
-      //   $scope.$apply(()=>{
-      //     if(!err){
-      //       console.log(data);
-      //     }
-      //   })
-      // })
-      console.log($scope.massiv);
-    }
 
   })
+
+

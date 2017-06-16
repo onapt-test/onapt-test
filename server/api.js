@@ -3,7 +3,9 @@ module.exports = (db)=>{
     var usersCollection = db.collection('users');
     var standartDescriptCollection = db.collection('standartDescriptions');
     var userDescriptCollection = db.collection('userDescriptions');
-    var testCollection = db.collection('test');
+    var tastingCollection = db.collection('tasting');
+    var activeTastingCollection = db.collection('activeTasting');
+    var wheelCollection = db.collection('wheel');
     generateToken = ()=>{
       var str=""
       var alp="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789"
@@ -14,9 +16,8 @@ module.exports = (db)=>{
       return str;
     }
     generateId = (callback)=>{
-      var rand = 1000 - 0.5 + Math.random() * (9999 - 1000 + 1)
+      var rand = 10000 - 0.5 + Math.random() * (99999 - 10000 + 1)
       rand = Math.round(rand);
-
       usersCollection.findOne({
         userId: rand
       }, (err,data)=>{
@@ -27,13 +28,40 @@ module.exports = (db)=>{
         }
       })
     }
+    generateIdCollection = (callback)=>{
+      var rand = 10000 - 0.5 + Math.random() * (99999 - 10000 + 1)
+      rand = Math.round(rand);
+      userDescriptCollection.findOne({
+        collectionId: rand
+      }, (err,data)=>{
+        if(!data) {
+          callback(rand);
+        } else {
+          generateIdCollection();
+        }
+      })
+    }
+    generateIdTasting = (callback)=>{
+      var rand = 10000 - 0.5 + Math.random() * (99999 - 10000 + 1)
+      rand = Math.round(rand);
+      activeTastingCollection.findOne({
+        testId: rand
+      },(err,data)=>{
+        if(!data) {
+          callback(rand);
+        }
+        else {
+          generateIdTasting();
+        }
+      })
+    }
     api = {
       login: (data, callback)=>{
-        user = usersCollection.findOne({
+        usersCollection.findOne({
           login: data.login
           // password: data.password
         }, (err,data2)=>{
-          console.log(err,data2);
+          // console.log(err,data2);
           if(!data2) {
             callback({err: "user not exist", code: 2}, null)
           } else {
@@ -50,9 +78,8 @@ module.exports = (db)=>{
             })
           }
         })
-
       },
-      register: (data,callback)=> {
+      register: (data,callback)=>{
         if(data) {
           usersCollection.findOne({
             login: data.login
@@ -60,7 +87,7 @@ module.exports = (db)=>{
             if(data2) {
               callback({err: 'user already exist', code: 1}, null)
             } else {
-              generateId((userId)=> {
+              generateId((userId)=>{
                 data.userId = userId;
                 data.token = generateToken();
                 usersCollection.insert(data);
@@ -70,50 +97,97 @@ module.exports = (db)=>{
           })
         }
       },
-      getStandartDescription: (data, callback)=> {
-        standartDescriptCollection.findOne({}, (err,data2)=>{
+      getWheel: (data, callback)=>{
+        wheelCollection.findOne({}, (err,data2)=>{
           if(data2) {
             callback(null,{data: data2})
           }
         })
       },
-      getMyDescription: (data,callback)=> {
-        console.log(data);
+      getMyDescription: (data,callback)=>{
         if(data) {
           usersCollection.findOne({
-            token: data.clientToken
+            token: data.token
           }, (err,data2)=>{
-            console.log(err,data2)
-            if(data2) {
-              userDescriptCollection.findOne({
+            if (data2) {
+              userDescriptCollection.find({
                 userId: data2.userId
-              }, (err,data3)=> {
-                if(data3) {
-                  callback(null, data3)
+              }, (err,data3)=>{
+                if(data3){
+                  callback(null,{message:"find collection", data: data3})
                 } else {
-                  callback({message: "нет своего набора"}, null)
+                  callback({message:"not found"}, null)
                 }
               })
             }
           })
         }
       },
-      editDescription: (data,callback)=> {
-        testCollection.update({test1: "test1"},{$set:{val4: 4}}, (err,data)=>{
-          console.log(data)
+      editDescription: (data,callback)=>{
+        if(data.token) {
+          usersCollection.findOne({
+            token: data.token
+          }, (err,data2)=>{
+            generateIdCollection((id)=>{
+              idCollection = id;
+              userDescriptCollection.insert({
+                idCollection: idCollection,
+                userId: data2.userId,
+                product: data.product,
+                descript: data.descript
+              })
+              callback(null, {message: "editDescription ok"});
+             })
+          })
+        }
+      },
+      deleteMyDescription: (data,callback)=>{
+        if(data) {
+          userDescriptCollection.remove({
+            idCollection: data.id
+          }, (err,data2)=>{
+            if(data2){
+              callback(null, {message: "successful delete"});
+            } else {
+              callback({message: "error"}, null)
+            }
+          })
+        }
+      },
+      getActiveTasting: (data,callback)=>{
+        console.log(data)
+        activeTastingCollection.find({},(err,data2)=>{
+          if(data2){
+            for(var i =0; i<data2.length; i++){
+              data2[i].pass = null;
+              data2[i].descriptions = null;
+            }
+            callback(null, {data: data2});
+            console.log(data2);
+          } else {
+            callback({message: "server error"}, null);
+          }
+        })
+      },
+      entrySession: (data, callback)=>{
+        console.log(data)
+        activeTastingCollection.findOne({
+          pass: data.pass,
+          testId: data.testId
+        },(err,data2)=>{
+          // console.log(err,data2)
+          if(data2){
+            callback(null,{message: "successful"})
+          } else {
+            callback({message:"error"}, null)
+          }
         })
       }
-
-
-
     }
     if(!api[method]) {
-      
       callback({err: "Method not exist"})
-      
     } else {
       api[method](data, callback)
     }
-    
   }
 }

@@ -13,16 +13,28 @@
       </div>
     </div>
     <div class="standart-content">
-    <table >
-    <tr>
-      <td ng-bind="descriptions.product"></td>
-      <td></td>
-    </tr>
-    <tr ng-repeat="(key,val) in descriptions.descript">
-      <td></td>
-      <td ng-bind="val"></td>
-    </tr>
-    </table>
+      <div ng-repeat="cat in wheel track by $index">
+        <div class="categories cursor-point" ng-click="descr=!descr" >
+          <img src="{{descr?'/assets/images/minus.png':'/assets/images/plus.png'}}">
+          {{cat.name}} 
+        </div>
+        <div ng-if="descr" class="descript" ng-repeat="val in cat.val track by $index">
+          {{val}}
+        </div>
+        <div  ng-if="descr" class="descript2" ng-repeat="caat in cat track by $index">
+          <span class="categories2 cursor-point" ng-click="val=!val">
+          <!-- <img src="{{val?'/assets/images/minus.png':'/assets/images/plus.png'}}"> -->
+            {{caat.name}}
+          </span>
+          <!-- <div ng-if="!val" ng-repeat="vaal in caat.val track by $index">
+            {{vaal}}
+          </div> -->
+        </div>
+        <!-- <div style="background-color: red" ng-repeat="val in cat.val">val {{val}}</div>
+        <div style="background-color: blue" ng-repeat="caat in cat">{{caat.name}}
+          <div ng-repeat="vaal in caat.val" style="background-color: red;">{{vaal}}</div>
+        </div> -->
+      </div>
     </div>
   </div>
 </div>

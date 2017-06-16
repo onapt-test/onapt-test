@@ -1,23 +1,45 @@
 <div ui-view>
 <div class="right-menu">
-	<div class="calc-wrapper">
-		<div class="descript-wrapper">
-			<div class="header">
-				<ul>
-					<li>
-						<button class="btn btn-success">Мои дескрипторы</button>
-					</li>
-					<li>
-						<button class="btn btn-primary" ui-sref="^.standart">Стандартные дескрипторы</button>
-					</li>
-				</ul>
-			</div>
-			<button ng-click="editDescription()">edit descript</button>
-
-			<ul ng-repeat="val in obj">
-				<li ng-repeat="val in val.val">{{val}}</li>
-			</ul>
-		</div>
-	</div>
+  <div class="calc-wrapper">
+    <div class="descript-wrapper">
+      <div class="header">
+        <ul>
+          <li>
+            <button class="btn btn-success">Мои дескрипторы</button>
+          </li>
+          <li>
+            <button class="btn btn-primary" ui-sref="^.standart">Стандартные дескрипторы</button>
+          </li>
+        </ul>
+      </div>
+      <div class="getwrapper">
+        <ul ng-repeat="set in myDescript track by $index">
+          <li class="set" ng-click="setD[$index]=!setD[$index]">{{set.product[0]}}
+            <div ng-if="setD[$index]">
+              <ol class="li-numb">
+                <li ng-repeat="descript in set.descript track by $index">{{descript}}</li>
+              </ol>
+            </div> 
+          </li>
+          <span class="glyphicon glyphicon-remove removeSet" ng-click="deleteSet($index)"></span>
+        </ul>
+      </div>
+      <div class="addwrapper">
+        <button ng-click="addProd()" class="btn btn-info" ng-disabled="check.prodbutton">Добавить набор</button>
+        <div class="repeat-prod" ng-repeat="prod in user.product track by $index">
+          <input type="text" placeholder="Название Набора" ng-model="user.product[$index]" class="addProd-inp">
+          <button ng-click="addDescr()" class="btn btn-warning addDescr">Добавить дескрипторы</button>
+          <div class="repeat-descr" ng-repeat="descr in user.descript track by $index">
+            <input type="text" ng-model="user.descript[$index]" class="addDescr-inp">
+          <span class="glyphicon glyphicon-remove delete-ico" ng-click="deleteDescr()"></span>
+          </div>
+          <div class="buttons">
+            <button ng-click="deleteProd()" class="btn btn-danger">Удалить набор</button>
+            <button class="btn btn-success" ng-click="editDescription()">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>

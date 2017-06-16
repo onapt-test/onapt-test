@@ -1,28 +1,30 @@
 .cursor-point {
 	cursor: pointer;
 }
-.modal-wrapper {
-	width: 270px;
-	margin: 0 auto;
-	table {
-		tr {
-			td {
-				padding-left: 13px;
-				padding-top: 15px;
-			}
-		}
-	}
-	button {
-		margin: 10px;
-		margin-top: 40px;
-	}
-}
+
 .calc-wrapper {
 	max-width: 900px;
-	margin: 0 auto;
+	// margin: 0 auto;
 	padding-top: 50px;
 }
-
+// Для Дескрипторов
+.set{
+      cursor: pointer;
+      list-style-type: none;
+      margin-top: 5px;
+      border: 2px solid grey;
+      padding: 5px;
+      font-style: italic;
+      display: inline-block;
+      width: 90%;
+      &:hover {
+        border: 2px solid green;
+      }
+    }
+    .removeSet {
+      margin-left: 10px;
+      cursor: pointer;
+    }
 
 .descript-wrapper {
   .header {
@@ -35,14 +37,94 @@
         margin-right: 100px;
       }
     }
-    .my-descr {
-      border: 1px solid black;
-      display: inline-block;
+  }
+  .getwrapper {
+    margin-top: 15px;
+    width: 30%;
+    
+  }
+  .addwrapper {
+    margin-top: 20px;
+    .repeat-prod{
+      padding-top: 20px;
+      .addProd-inp {
+        border-radius: 3px;
+      }
+      .buttons {
+        // display: block;
+        margin-top: 20px;
+      }
+      .addDescr {
+        margin-top:10px;
+        display:block;
+      }
     }
-    .standart-descr {
-      border: 1px solid black;
-      display: inline-block;
+    .repeat-descr {
+      .addDescr-inp {
+        margin-top: 2px;
+        border: none;
+        border-bottom: 1px solid grey;
+        input:focus {
+          border:none;
+        }
+      }
     }
-
+    .delete-ico{
+      cursor:pointer;
+    }
+  }
+}
+.standart-content {
+  margin-top: 15px;
+  width: 30%;
+  img{
+    width: 20px;
+    height: 20px;
+  }
+  .categories{
+    display: inline-block;
+    border-bottom: 2px solid white;
+    width: 170px;
+    margin-top: 5px;
+    &:hover{
+      border-bottom: 2px solid #3BC391;
+    }
+  }
+  .categories2 {
+    display: inline-block;
+    background-color: #E6E6E6;
+    border-bottom: 2px solid white;
+    width: 150px;
+    &:hover{
+      border-bottom: 2px solid #3BC391;
+    }
+  }
+  .descript{
+    margin-left: 100px;
+  }
+  .descript2 {
+    margin-left: 200px;
+  }
+}
+.panel-wrapper {
+  .content {
+    .active-block {
+      margin-top: 10px;
+      padding: 20px;
+      width: 40%;
+      border: 2px solid green;
+      table {
+        tr {
+          td:first-child{
+            padding-right: 10px;
+          }
+        }
+      }
+      .pass-block {
+        width: 220px;
+        margin: 0 auto;
+        padding-top: 10px;
+      }
+    }
   }
 }

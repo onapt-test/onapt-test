@@ -48,11 +48,11 @@ function getHandler(currApi){
         requestDomain.run(function(){
             var methodName = req.url.split('/')[2];
             
-            if (!req.body.cookies){
-                req.body.cookies = {}
-            }
-            if (!req.body.cookies.sessionId)
-                req.body.cookies.sessionId = null;
+            // if (!req.body.cookies){
+            //     req.body.cookies = {}
+            // }
+            // if (!req.body.cookies.sessionId)
+            //     req.body.cookies.sessionId = null;
             if(!_.isObject(req.body)){
                 res.status(400).json({
                         err: {

@@ -1,5 +1,5 @@
 angular.module("app")
-  .controller("mainController", ($scope, $rootScope, $state, $translate, $server)=>{
+  .controller("mainCtrl", ($scope, $rootScope, $state, $translate, $server)=>{
     $rootScope.lang = "ru"
     $rootScope.translate = $scope.translate = $translate
     $scope.setLang = (lang)=>{
@@ -18,6 +18,7 @@ angular.module("app")
               $scope.user.error = "";
               $scope.user.successful = "Регистрация прошла успешно";
               $state.go('cabinet');
+              // location.reload();
             }
             else if (err.err.code == 1) {
               $scope.user.successfu = "";

@@ -1,0 +1,41 @@
+<div ui-view>
+  <div class="calc-wrapper">
+    <div class="panel-wrapper">
+      <button class="btn btn-success">Создать дегустацию</button>
+      <div class="content">
+        <div class="active-block" ng-repeat="ses in session">
+        <table>
+          <tr>
+            <td>Имя администратора</td>
+            <td>{{ses.adminName}}</td>
+          </tr>
+          <tr>
+            <td>Продукт</td>
+            <td>{{ses.product}}</td>
+          </tr>
+          <tr>
+            <td>Метод</td>
+            <td>{{ses.method}}</td>
+          </tr>
+          <tr>
+            <td>Дескрипторы</td>
+            <td ng-if="descriptionsStandart">Стандартный</td>
+            <td ng-if="!descriptionsStandart">Свои</td>
+          </tr>
+          <tr>
+            <td>Людей</td>
+            <td>{{ses.users.length}} / {{ses.maxUser}}</td>
+          </tr>
+        </table>
+          <div class="input-group pass-block">
+              <input type="number" class="form-control " placeholder="Пароль входа" ng-model="ses.password">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="entry(ses.testId,ses.password)">Войти!
+                </button>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
